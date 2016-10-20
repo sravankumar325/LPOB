@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<canvas id="customer" type="list"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:schemaLocation="http://www.thirdpillar.com/codify/ui-metamodel ui-metamodel.xsd"
+		xmlns="http://www.thirdpillar.com/codify/ui-metamodel">
+	<data-table name="results" row="customer"  label="Entities">
+		<columns>
+			<column name="customer.customerNumber" label="Customer Number"/>
+			<column name="customer.customerName" label="Customer Name"/>
+			<column name="customer.customerType" label="Type"/>
+			<column name="customer.legalEntityType" />
+			<column name="customer.displayAddress" label="Address"/>
+		</columns>
+		<commands>
+			<command name="Export CSV" action="Customer-ExportCSV" type="exportCsv"/>
+			<command id="addNewCustomer" name="Add New Entity" action="AddNewCustomer" type="pageflow-action" />
+			<command id="back" name="Back" action="BackCustomer"  type="pageflow-action"/>
+		</commands>			
+	</data-table>
+	<beans>
+		<bean name="results" type="com.thirdpillar.codify.loanpath.model.Customer" />
+	</beans>	
+</canvas>
+

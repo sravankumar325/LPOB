@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<canvas id="customer" type="search" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.thirdpillar.com/codify/ui-metamodel ui-metamodel.xsd"
+	xmlns="http://www.thirdpillar.com/codify/ui-metamodel">
+
+	<section id="customer.customerSearch" cols="3">
+		<field name="customer.ssn" label="SSN" />
+		<field name="customer.customerType"  label="Type" targetFields='customer.customerSearch'/>
+		<field name="customer.customerNumber"/>
+		<field name="customer.legalName"  />
+		<field name="customer.firstName"/>
+		<field name="customer.lastName" />
+		<field name="customer.federalTaxId"/>
+		<field name="customer.addresses.address1" label="Address Line1" />
+		<field name="customer.addresses.city" label="City"/>
+		<field name="customer.addresses.postalCode" label="Postal Code"/>
+		<field name="customer.addresses.state" label="State" />
+	</section>
+	<commands>
+		<command id="searchAction" name="Search" action="com.thirdpillar.codify.loanpath.model.Customer.searchCustomer" type="businessOp"/>
+	</commands>
+	<beans>
+		<bean name="customer" type="com.thirdpillar.codify.loanpath.model.Customer"/>
+	</beans>
+</canvas>
